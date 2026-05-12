@@ -6,8 +6,13 @@ public class House extends Asset {
     private int squareFoot;
     private int lotSize;
 
-    public House(String description, String dateAcquired, double originalCost) {
+
+    public House(String description, String dateAcquired, double originalCost, String address, int condition, int squareFoot, int lotSize) {
         super(description, dateAcquired, originalCost);
+        this.address = address;
+        this.condition = condition;
+        this.squareFoot = squareFoot;
+        this.lotSize = lotSize;
     }
 
     public String getAddress() {
@@ -48,7 +53,8 @@ public class House extends Asset {
             case 2 -> 130;
             case 3 -> 90;
             case 4 -> 80;
-            default -> 0;
+            default -> throw new RuntimeException("Invalid option. Enter 1-4");
+
         };
         return (squareFoot * pricePerSquareFoot) + (lotSize * 0.25);
     }
