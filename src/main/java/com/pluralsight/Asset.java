@@ -34,7 +34,7 @@ public class Asset {
     public void setOriginalCost(double originalCost) {
         this.originalCost = originalCost;
     }
-    public double getValue(){
+    public double getValue() throws RuntimeException {
         return originalCost;
     }
 }
